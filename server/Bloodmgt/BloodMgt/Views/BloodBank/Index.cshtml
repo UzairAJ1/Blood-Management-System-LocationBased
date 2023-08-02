@@ -1,0 +1,191 @@
+﻿@model IEnumerable<BloodMgt.Models.Bloodbank>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+
+<section class="content">
+    <div class="container-fluid">
+        <!-- Info boxes -->
+        <div class="row">
+            <div class="col-12 col-sm-6 col-md-3">
+                <div class="info-box">
+
+                    <div class="info-box-content">
+                        <span class="info-box-text">
+                            Blood Donner::
+
+                            <small>100</small>
+                        </span>
+                        <img src="~/bg/hhh.jpg" alt="Product 1" class="img-circle img-size-32 mr-2">
+                    </div>
+                    <!-- /.info-box-content -->
+                </div>
+                <!-- /.info-box -->
+            </div>
+            <!-- /.col -->
+            <div class="col-12 col-sm-6 col-md-3">
+                <div class="info-box mb-3">
+
+                    <div class="info-box-content">
+                        <span class="info-box-text">
+                            Today's Donner'::
+                            <small>10</small>
+                        </span>
+                        <img src="~/bg/hhh.jpg" alt="Product 1" class="img-circle img-size-32 mr-2">
+
+                    </div>
+                    <!-- /.info-box-content -->
+                </div>
+                <!-- /.info-box -->
+            </div>
+            <!-- /.col -->
+            <!-- fix for small devices only -->
+            <div class="clearfix hidden-md-up"></div>
+
+            <div class="col-12 col-sm-6 col-md-3">
+                <div class="info-box mb-3">
+
+                    <div class="info-box-content">
+                        <span class="info-box-text">
+                            Compagn Launch::
+                            <small>12</small>
+                        </span>
+                        <img src="~/bg/hhh.jpg" alt="Product 1" class="img-circle img-size-32 mr-2">
+
+                    </div>
+                    <!-- /.info-box-content -->
+                </div>
+                <!-- /.info-box -->
+            </div>
+            <!-- /.col -->
+            <div class="col-12 col-sm-6 col-md-3">
+                <div class="info-box mb-3">
+
+                    <div class="info-box-content">
+                        <span class="info-box-text">
+                            Active Donners::
+                            <small>40</small>
+                        </span>
+                        <img src="~/bg/hhh.jpg" alt="Product 1" class="img-circle img-size-32 mr-2">
+
+                    </div>
+                    <!-- /.info-box-content -->
+                </div>
+                <!-- /.info-box -->
+            </div>
+            <!-- /.col -->
+        </div>
+
+<p>
+    
+</p>
+
+        <div class="card">
+            <div class="card-header border-0">
+                <h3 class="card-title">Blood Banks</h3>
+                <div class="card-tools">
+                    <a href="#" class="btn btn-tool btn-sm">
+                        <i class="fas fa-download"></i>
+                        <a href="javascript:void(0)" class="btn btn-sm btn-info float-left">New Donner</a>
+                        <a asp-action="Create">Create New</a>
+                    </a>
+                    <a href="#" class="btn btn-tool btn-sm">
+                        <i class="fas fa-bars"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="card-body table-responsive p-0">
+                <table class="table table-striped table-valign-middle">
+                    <thead>
+                        
+                        <tr>
+                            <th>
+                                
+                            </th>
+                            <th>
+                                    name
+                            </th>
+                            <th>
+                                    city
+                            </th>
+                            <th>
+                                    A+
+                            </th>
+                            <th>
+                                    A-
+                            </th>
+                            <th>
+                                    B+
+                            </th>
+                            <th>
+                                    B-
+                            </th>
+                            <th>
+                                    AB+
+                            </th>
+                            <th>
+                                   AB-
+                            </th>
+                            <th>
+                                    O+
+                            </th>
+                            <th>
+                                    O-
+                            </th>
+                            <th>More</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>
+                                    <img src="~/bg/hhh.jpg" alt="Product 1" class="img-circle img-size-32 mr-2">
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.name)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.city)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.ap)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.an)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.bp)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.bn)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.abp)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.abn)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.op)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.on)
+                                </td>
+                                <td>
+                                    <a asp-action="Edit" asp-route-id="@item.bid">Edit</a> |
+                                                                    </td>
+                                <td>
+                                    <a href="#" class="text-muted">
+                                        <i class="fas fa-search"></i>
+                                    </a>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+

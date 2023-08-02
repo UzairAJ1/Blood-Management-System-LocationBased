@@ -1,0 +1,71 @@
+﻿@model IEnumerable<BloodMgt.Models.Transfusion>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.patientid)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.requstid)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.city)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.transdate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.unit)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.bgid)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.bloodgroup)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.patientid)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.requstid)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.city)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.transdate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.unit)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.bgid)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.bloodgroup)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

@@ -1,0 +1,83 @@
+﻿@model IEnumerable<BloodMgt.Models.Patient>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+
+<div class="card">
+    <div class="card-header border-0">
+        <h3 class="card-title">Donnation </h3>
+        <img src="~/bg/hhh.jpg" alt="Product 1" class="img-circle img-size-32 mr-2">
+        <div class="card-tools">
+            <a href="#" class="btn btn-tool btn-sm">
+                <i class="fas fa-download"></i>
+                <a href="javascript:void(0)" class="btn btn-sm btn-info float-left">New Donner</a>
+            </a>
+            <a href="#" class="btn btn-tool btn-sm">
+                <a asp-action="Create">Create New</a>
+                <i class="fas fa-bars"></i>
+            </a>
+        </div>
+    </div>
+    <div class="card-body table-responsive p-0">
+        <table class="table table-striped table-valign-middle">
+            <thead>
+                <tr>
+
+                    <th>Patientid</th>
+                    <th>Name</th>
+                    <th>Blood Group</th>
+                    <th>City</th>
+                    <th>contact</th>
+                    <th>Gender</th>
+                   
+
+                    <th>Age</th>
+                    <th>Reason</th>
+                    <th>More</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.patientid)
+                        </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.bloodgroup)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.city)
+            </td>
+           
+            <td>
+                @Html.DisplayFor(modelItem => item.contactno)
+            </td>
+           
+            <td>
+                @Html.DisplayFor(modelItem => item.gender)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.age)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.reason)
+            </td>
+            
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.patientid">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.patientid">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.patientid">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+</div>
+</div>
